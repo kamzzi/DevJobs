@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styled from "./ThemeChanger.module.css";
+import { useTheme } from "../../../store/ThemeContext/useTheme";
 
 export const ThemeChanger = () => {
   const [isActive, setIsActive] = useState(false);

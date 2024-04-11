@@ -3,6 +3,7 @@ import { RoutesPaths } from "./types/shared";
 import { Home } from "./pages/Home/Home";
 import { Job } from "./pages/Job/Job";
 import { NotFound } from "./pages/NotFound/NotFound";
+import { ThemeContextProvider } from "./store/ThemeContext/ThemeContext";
 
 const router = createBrowserRouter([
   {
@@ -10,7 +11,7 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: RoutesPaths.JOB, 
+    path: RoutesPaths.JOB,
     element: <Job />,
   },
   {
@@ -20,5 +21,9 @@ const router = createBrowserRouter([
 ]);
 
 export const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <ThemeContextProvider>
+      <RouterProvider router={router} />;
+    </ThemeContextProvider>
+  );
 };
