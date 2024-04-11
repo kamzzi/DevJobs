@@ -1,0 +1,12 @@
+.wrapper {
+  --width: 71.25rem;
+  max-width: var(--width);
+  padding: 0 1rem;
+  margin: 0 auto;
+}
+
+@media (max-width: 64rem) {
+  .wrapper {
+    --width: 50.25rem;
+  }
+}

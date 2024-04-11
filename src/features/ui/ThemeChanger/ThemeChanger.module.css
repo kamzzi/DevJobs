@@ -1,0 +1,37 @@
+.changer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.changer--active .changer__circle {
+  transform: translate(210%, -50%);
+}
+
+.changer__action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.changer__button {
+  position: relative;
+  border: none;
+  cursor: pointer;
+  padding: 0.75rem 2rem;
+  border-radius: 10rem;
+  background-color: var(--color-neutral);
+}
+
+.changer__circle {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  display: inline-block;
+  border-radius: 50%;
+  height: 1rem;
+  width: 1rem;
+  background-color: var(--color-primary);
+  transition: 0.3s;
+}

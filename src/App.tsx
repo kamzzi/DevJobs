@@ -10,7 +10,7 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: RoutesPaths.JOB,
+    path: RoutesPaths.JOB, 
     element: <Job />,
   },
   {

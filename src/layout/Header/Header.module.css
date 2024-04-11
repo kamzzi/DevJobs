@@ -1,0 +1,38 @@
+.header {
+  --height: 12rem;
+  --left-bottom-radius: 10rem;
+
+  padding: 3rem 2rem;
+  height: var(--height);
+  background-color: var(--color-primary);
+  background-image: url("./assets/desktop/bg-pattern-header.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-bottom-left-radius: var(--left-bottom-radius);
+}
+
+.header__content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (max-width: 64rem) {
+  .header {
+    background-image: url("./assets/tablet/bg-pattern-header.svg");
+  }
+}
+
+@media (max-width: 48rem) {
+  .header {
+    --left-bottom-radius: 0;
+    padding: 3rem 0;
+  }
+}
+
+@media (max-width: 40rem) {
+  .header {
+    background-image: url("./assets/mobile/bg-pattern-header.svg");
+  }
+}
