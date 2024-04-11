@@ -41,6 +41,12 @@
   --color-neutral: #ffffff;
   --color-dark-neutral: #121721;
   --color-card-background: #f4f6f8;
+
+  --color-background: #ffffff;
+}
+
+[data-theme="dark"] {
+  --color-background: #121721;
 }
 
 *,

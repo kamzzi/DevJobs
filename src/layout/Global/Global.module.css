@@ -1,4 +1,6 @@
 .global {
   min-height: 100vh;
-  background-color: var(--color-neutral);
+  background-color: var(--color-background);
+
+  transition: 0.3s;
 }
