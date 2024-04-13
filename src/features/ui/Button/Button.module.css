@@ -1,0 +1,20 @@
+.button {
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-family: inherit;
+}
+
+.button--form {
+  border-radius: 6px;
+  padding: 1rem 2.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-neutral);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: 0.3s;
+}
+
+.button--form:hover {
+  background-color: var(--color-primary-lighter);
+}

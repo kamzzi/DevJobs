@@ -41,12 +41,20 @@
   --color-neutral: #ffffff;
   --color-dark-neutral: #121721;
   --color-card-background: #f4f6f8;
+  --color-line: #6e8098;
+  --color-hover: #d5d8f7;
 
-  --color-background: #ffffff;
+  --color-background: #f4f6f8;
+  --color-elements: #ffffff;
+  --color-input-text: #19202d;
+  --color-checkbox: #e7e8e9;
 }
 
 [data-theme="dark"] {
   --color-background: #121721;
+  --color-elements: #19202d;
+  --color-input-text: #ffffff;
+  --color-checkbox: #313743;
 }
 
 *,

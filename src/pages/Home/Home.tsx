@@ -1,3 +1,4 @@
+import { Filters } from "../../features/filters/Filters";
 import { Wrapper } from "../../features/ui/Wrapper/Wrapper";
 import { Global } from "../../layout/Global/Global";
 import { Header } from "../../layout/Header/Header";
@@ -9,6 +10,7 @@ export const Home = () => {
       <Header />
       <Wrapper>
         <Main>
+          <Filters />
           <h1>Aasd</h1>
           <h1>Aasd</h1>
           <h1>Aasd</h1>

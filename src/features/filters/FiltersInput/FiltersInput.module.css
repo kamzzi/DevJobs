@@ -1,0 +1,25 @@
+.filters__item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.filters__item:not(:last-of-type) {
+  border-right: 1px solid var(--color-line);
+}
+
+.filters__label-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.filters__input {
+  padding: 1rem 1rem 1rem 0.25rem;
+  font-family: inherit;
+  font-size: 1rem;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  color: var(--color-input-text);
+}
