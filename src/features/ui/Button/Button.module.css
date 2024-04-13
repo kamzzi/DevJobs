@@ -18,3 +18,9 @@
 .button--form:hover {
   background-color: var(--color-primary-lighter);
 }
+
+@media (max-width: 48rem) {
+  .button--form {
+    padding: 1rem;
+  }
+}

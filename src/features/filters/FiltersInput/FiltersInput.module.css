@@ -23,3 +23,18 @@
   background-color: transparent;
   color: var(--color-input-text);
 }
+
+@media (max-width: 64rem) {
+  .filters__item {
+    gap: 0.45rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .filters__item {
+    width: 100%;
+  }
+  .filters__item:not(:last-of-type) {
+    border: none;
+  }
+}
