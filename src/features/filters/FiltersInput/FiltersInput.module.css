@@ -4,8 +4,17 @@
   gap: 1rem;
 }
 
+.filters__item--modal {
+  padding-bottom: 1rem;
+}
+
 .filters__item:not(:last-of-type) {
   border-right: 1px solid var(--color-line);
+}
+
+.filters__item--modal:not(:last-of-type) {
+  border-right: 0;
+  border-bottom: 1px solid var(--color-line);
 }
 
 .filters__label-container {
@@ -36,5 +45,10 @@
   }
   .filters__item:not(:last-of-type) {
     border: none;
+  }
+
+  .filters__item--modal:not(:last-of-type) {
+    border-right: 0;
+    border-bottom: 1px solid var(--color-line);
   }
 }

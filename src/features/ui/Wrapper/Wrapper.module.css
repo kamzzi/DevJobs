@@ -1,12 +1,20 @@
 .wrapper {
   --width: 71.25rem;
+  width: 100%;
   max-width: var(--width);
   padding: 0 1rem;
   margin: 0 auto;
 }
 
+.wrapper--modal {
+  --width: 30rem;
+}
+
 @media (max-width: 64rem) {
   .wrapper {
     --width: 50.25rem;
+  }
+  .wrapper--modal {
+    --width: 30rem;
   }
 }
