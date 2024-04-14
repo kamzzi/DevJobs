@@ -43,11 +43,14 @@
   --color-card-background: #f4f6f8;
   --color-line: #6e8098;
   --color-hover: #d5d8f7;
+  --color-error: #dc2626;
 
+  --color-universal: #637389;
   --color-background: #f4f6f8;
   --color-elements: #ffffff;
   --color-input-text: #19202d;
   --color-checkbox: #e7e8e9;
+  --color-job-special: #5964e0;
 }
 
 [data-theme="dark"] {
@@ -55,6 +58,9 @@
   --color-elements: #19202d;
   --color-input-text: #ffffff;
   --color-checkbox: #313743;
+  --color-error: #f87171;
+  --color-universal: #7d8da2;
+  --color-job-special: #7a83e6;
 }
 
 *,

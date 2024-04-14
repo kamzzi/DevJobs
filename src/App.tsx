@@ -25,7 +25,7 @@ export const App = () => {
   return (
     <ModalContextProvider>
       <ThemeContextProvider>
-        <RouterProvider router={router} />;
+        <RouterProvider router={router} />
       </ThemeContextProvider>
     </ModalContextProvider>
   );

@@ -18,3 +18,9 @@
     --width: 30rem;
   }
 }
+
+@media (max-width: 40rem) {
+  .wrapper--jobs {
+    --width: 24rem;
+  }
+}
