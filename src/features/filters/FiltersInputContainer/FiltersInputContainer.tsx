@@ -1,20 +1,21 @@
+import { ReactNode } from "react";
 import styled from "./FiltersInput.module.css";
 
 type FilterInputIds = "location" | "title";
 
-type FiltersInputProps = {
+type FiltersInputContainerProps = {
   id: FilterInputIds;
-  placeholder: string;
   icon: string;
   modifier?: string;
+  children: ReactNode;
 };
 
-export const FiltersInput = ({
+export const FiltersInputContainer = ({
   id,
-  placeholder,
   icon,
   modifier,
-}: FiltersInputProps) => {
+  children,
+}: FiltersInputContainerProps) => {
   return (
     <div
       className={`${styled.filters__item} ${
@@ -24,12 +25,7 @@ export const FiltersInput = ({
       <label htmlFor={id} className={styled["filters__label-container"]}>
         <img src={`./assets/desktop/icon-${icon}.svg`} alt="" />
       </label>
-      <input
-        type="text"
-        placeholder={placeholder}
-        className={styled.filters__input}
-        id={id}
-      />
+      {children}
     </div>
   );
 };

@@ -1,10 +1,14 @@
+import { forwardRef } from "react";
 import Checkbox from "react-custom-checkbox";
 
 type FiltersCustomCheckboxProps = {
   checked: boolean;
 };
 
-export const FiltersCustomCheckbox = ({ checked }: FiltersCustomCheckboxProps) => {
+export const FiltersCustomCheckbox = forwardRef<
+  any,
+  FiltersCustomCheckboxProps
+>(({ checked }, ref) => {
   return (
     <Checkbox
       icon={<img src="./assets/desktop/icon-check.svg" alt="" />}
@@ -25,6 +29,7 @@ export const FiltersCustomCheckbox = ({ checked }: FiltersCustomCheckboxProps) =
         color: "var(--color-input-text)",
         fontWeight: 500,
       }}
+      ref={ref}
     />
   );
-};
+});
