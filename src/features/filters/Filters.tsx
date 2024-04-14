@@ -21,6 +21,8 @@ export const Filters = () => {
     resolver: zodResolver(FiltersSchema),
   });
 
+  console.log({ ...register("title") });
+
   const submitHandler = (data: FiltersSchemaType) => {
     console.log(data);
   };
@@ -31,9 +33,9 @@ export const Filters = () => {
       <form className={styled.filters} onSubmit={handleSubmit(submitHandler)}>
         <FiltersInputContainer id="title" icon="search">
           <Input
-            {...register("title")}
             id="title"
             placeholder="Filter by title..."
+            {...register("title")}
           />
         </FiltersInputContainer>
 

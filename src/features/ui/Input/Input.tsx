@@ -7,14 +7,14 @@ type InputProps = {
 };
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ placeholder, id }, ref) => {
+  ({ placeholder, id, ...rest }, ref) => {
     return (
       <input
         ref={ref}
         type="text"
         placeholder={placeholder}
         className={styled.input}
-        name={id}
+        {...rest}
         id={id}
       />
     );
