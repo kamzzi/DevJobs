@@ -9,6 +9,9 @@
 }
 
 .label {
+  border: 1px solid transparent;
+  padding: 3px;
+  width: fit-content;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -26,6 +29,10 @@
   background-color: var(--color-checkbox);
   border-radius: 4px;
   transition: 0.3s;
+}
+
+.hidden:focus + .label {
+  border: 1px solid var(--color-primary);
 }
 
 .custom--checked {
