@@ -68,3 +68,7 @@
 body {
   font-family: "Kumbh Sans", sans-serif;
 }
+
+body[data-modal="true"] {
+  overflow-y: hidden;
+}

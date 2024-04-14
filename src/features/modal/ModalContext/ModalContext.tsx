@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useState } from "react";
+import { ReactNode, createContext, useEffect, useState } from "react";
 import { useKey } from "../../../hooks/useKey";
 
 type ModalContextData = {
@@ -20,11 +20,19 @@ export const ModalContextProvider = ({
 
   const close = () => {
     setIsOpen(false);
+    document.body.removeAttribute("data-modal");
   };
 
   const open = () => {
     setIsOpen(true);
+    document.body.setAttribute("data-modal", "true");
   };
+
+  useEffect(() => {
+    if (isOpen) {
+      window.scrollTo(0, 0);
+    }
+  }, [isOpen]);
 
   useKey("Escape", close);
 
