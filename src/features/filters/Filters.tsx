@@ -10,14 +10,19 @@ import { useForm } from "react-hook-form";
 import { FiltersSchema, FiltersSchemaType } from "./FiltersSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "../ui/Input/Input";
+import { useFiltersQuery } from "./useFiltersQuery";
 
 export const Filters = () => {
   const { isOpen, open } = useModal();
+  const [params] = useFiltersQuery();
   const isMobile = useMediaQuery({
     query: "(max-width:48rem)",
   });
 
   const { register, handleSubmit, watch } = useForm<FiltersSchemaType>({
+    defaultValues: {
+      ...params,
+    },
     resolver: zodResolver(FiltersSchema),
   });
 
