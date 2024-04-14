@@ -72,7 +72,7 @@ export const Filters = () => {
       </form>
       {isOpen && (
         <Modal>
-          <FiltersModal />
+          <FiltersModal checked={isCheckboxChecked} register={register} />
         </Modal>
       )}
     </>
