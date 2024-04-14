@@ -4,6 +4,7 @@ import { Home } from "./pages/Home/Home";
 import { Job } from "./pages/Job/Job";
 import { NotFound } from "./pages/NotFound/NotFound";
 import { ThemeContextProvider } from "./store/ThemeContext/ThemeContext";
+import { ModalContextProvider } from "./features/modal/ModalContext/ModalContext";
 
 const router = createBrowserRouter([
   {
@@ -22,8 +23,10 @@ const router = createBrowserRouter([
 
 export const App = () => {
   return (
-    <ThemeContextProvider>
-      <RouterProvider router={router} />;
-    </ThemeContextProvider>
+    <ModalContextProvider>
+      <ThemeContextProvider>
+        <RouterProvider router={router} />;
+      </ThemeContextProvider>
+    </ModalContextProvider>
   );
 };

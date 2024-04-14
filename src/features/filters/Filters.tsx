@@ -3,12 +3,12 @@ import { FiltersCustomCheckbox } from "./FiltersCustomCheckbox/FiltersCustomChec
 import { FiltersInput } from "./FiltersInput/FiltersInput";
 import { Button } from "../ui/Button/Button";
 import { useMediaQuery } from "react-responsive";
-import { useState } from "react";
 import { Modal } from "../modal/Modal";
 import { FiltersModal } from "./FiltersModal/FiltersModal";
+import { useModal } from "../modal/ModalContext/useModal";
 
 export const Filters = () => {
-  const [open, setOpen] = useState(false);
+  const { isOpen, open } = useModal();
   const isMobile = useMediaQuery({
     query: "(max-width:48rem)",
   });
@@ -34,10 +34,7 @@ export const Filters = () => {
           </>
         ) : (
           <div className={styled.filters__item}>
-            <Button
-              aria-title="Open filters"
-              onClick={() => setOpen((prev) => !prev)}
-            >
+            <Button aria-label="Open filters" onClick={open}>
               <img src="./assets/mobile/icon-filter.svg" alt="" />
             </Button>
           </div>
@@ -50,7 +47,7 @@ export const Filters = () => {
           )}
         </Button>
       </form>
-      {open && (
+      {isOpen && (
         <Modal>
           <FiltersModal />
         </Modal>
