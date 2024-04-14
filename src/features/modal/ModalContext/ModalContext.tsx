@@ -1,4 +1,5 @@
 import { ReactNode, createContext, useState } from "react";
+import { useKey } from "../../../hooks/useKey";
 
 type ModalContextData = {
   close: () => void;
@@ -24,6 +25,8 @@ export const ModalContextProvider = ({
   const open = () => {
     setIsOpen(true);
   };
+
+  useKey("Escape", close);
 
   return (
     <ModalContext.Provider value={{ isOpen, close, open }}>
