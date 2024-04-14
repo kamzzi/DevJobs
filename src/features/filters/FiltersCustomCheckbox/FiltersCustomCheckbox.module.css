@@ -1,0 +1,37 @@
+.hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--color-input-text);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.custom {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 1.75rem;
+  width: 1.75rem;
+  background-color: var(--color-checkbox);
+  border-radius: 4px;
+  transition: 0.3s;
+}
+
+.custom--checked {
+  background-color: var(--color-primary);
+}
+
+.custom:hover {
+  background-color: var(--color-hover);
+}

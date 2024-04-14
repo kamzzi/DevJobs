@@ -1,35 +1,33 @@
 import { forwardRef } from "react";
-import Checkbox from "react-custom-checkbox";
+import styled from "./FiltersCustomCheckbox.module.css";
 
 type FiltersCustomCheckboxProps = {
   checked: boolean;
 };
 
 export const FiltersCustomCheckbox = forwardRef<
-  any,
+  HTMLInputElement,
   FiltersCustomCheckboxProps
->(({ checked }, ref) => {
+>(({ checked, ...rest }, ref) => {
   return (
-    <Checkbox
-      icon={<img src="./assets/desktop/icon-check.svg" alt="" />}
-      containerStyle={{
-        gap: ".5rem",
-      }}
-      style={{
-        backgroundColor: `${
-          checked ? "var(--color-primary)" : "var(--color-checkbox)"
-        }`,
-      }}
-      size={24}
-      borderRadius={4}
-      borderColor="transparent"
-      label="Full Time"
-      labelStyle={{
-        fontSize: "1rem",
-        color: "var(--color-input-text)",
-        fontWeight: 500,
-      }}
-      ref={ref}
-    />
+    <>
+      <input
+        type="checkbox"
+        id="time"
+        className={styled.hidden}
+        ref={ref}
+        {...rest}
+      />
+      <label htmlFor="time" className={styled.label}>
+        <span
+          className={`${styled.custom} ${checked && styled["custom--checked"]}`}
+        >
+          {checked ? (
+            <img src="./assets/desktop/icon-check.svg" alt="" />
+          ) : null}
+        </span>
+        <span>{checked ? "Full" : "Part"} Time</span>
+      </label>
+    </>
   );
 });

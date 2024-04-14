@@ -17,17 +17,16 @@ export const Filters = () => {
     query: "(max-width:48rem)",
   });
 
-  const { register, handleSubmit } = useForm<FiltersSchemaType>({
+  const { register, handleSubmit, watch } = useForm<FiltersSchemaType>({
     resolver: zodResolver(FiltersSchema),
   });
-
-  console.log({ ...register("title") });
 
   const submitHandler = (data: FiltersSchemaType) => {
     console.log(data);
   };
 
-  const checked = false;
+  const isCheckboxChecked = watch("fullTime");
+
   return (
     <>
       <form className={styled.filters} onSubmit={handleSubmit(submitHandler)}>
@@ -50,8 +49,8 @@ export const Filters = () => {
             </FiltersInputContainer>
             <div className={styled.filters__item}>
               <FiltersCustomCheckbox
-                checked={checked}
-                // {...register("fullTime")}
+                checked={isCheckboxChecked}
+                {...register("fullTime")}
               />
             </div>
           </>
