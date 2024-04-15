@@ -14,7 +14,7 @@ import { useFiltersQuery } from "./useFiltersQuery";
 
 export const Filters = () => {
   const { isOpen, open } = useModal();
-  const [params] = useFiltersQuery();
+  const [params, setParams] = useFiltersQuery();
   const isMobile = useMediaQuery({
     query: "(max-width:48rem)",
   });
@@ -27,7 +27,7 @@ export const Filters = () => {
   });
 
   const submitHandler = (data: FiltersSchemaType) => {
-    console.log(data);
+    setParams(data);
   };
 
   const isCheckboxChecked = watch("fullTime");

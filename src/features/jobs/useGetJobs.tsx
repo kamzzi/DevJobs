@@ -28,6 +28,8 @@ export const useGetJobs = () => {
 
         const parsedData = JobsSchema.parse(data);
 
+        console.log(parsedData);
+
         if (parsedData) {
           setJobs(parsedData);
         }

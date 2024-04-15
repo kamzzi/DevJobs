@@ -1,5 +1,5 @@
 import { useSearchParams } from "react-router-dom";
-import { FiltersSchema } from "./FiltersSchema";
+import { FiltersSchema, FiltersSchemaType } from "./FiltersSchema";
 
 enum FiltersWorkType {
   FULL = "full",
@@ -7,7 +7,7 @@ enum FiltersWorkType {
 }
 
 export const useFiltersQuery = () => {
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
 
   const time = searchParams.get("time") === FiltersWorkType.FULL;
 
@@ -17,5 +17,13 @@ export const useFiltersQuery = () => {
     fullTime: time ?? FiltersWorkType.PART,
   });
 
-  return [params] as const;
+  const setParams = ({ title, location, fullTime }: FiltersSchemaType) => {
+    setSearchParams({
+      title,
+      location,
+      time: fullTime ? FiltersWorkType.FULL : FiltersWorkType.PART,
+    });
+  };
+
+  return [params, setParams] as const;
 };
