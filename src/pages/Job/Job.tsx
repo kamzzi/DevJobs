@@ -1,7 +1,15 @@
-import { useParams } from "react-router";
+import { Global } from "../../layout/Global/Global";
+import { Header } from "../../layout/Header/Header";
+import { Main } from "../../layout/Main/Main";
+import { JobDescription } from "../../features/jobs/Job/JobDescription/JobDescription";
 
 export const Job = () => {
-  const params = useParams();
-
-  return <h1>Job! - {params.job}</h1>;
+  return (
+    <Global>
+      <Header />
+      <Main>
+        <JobDescription />
+      </Main>
+    </Global>
+  );
 };

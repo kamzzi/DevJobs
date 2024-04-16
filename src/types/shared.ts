@@ -1,5 +1,5 @@
 export enum RoutesPaths {
   HOME = "/",
-  JOB = "/:job",
+  JOB = "/:id",
   NOT_FOUND = "*",
 }

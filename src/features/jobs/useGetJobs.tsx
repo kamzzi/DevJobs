@@ -7,7 +7,7 @@ const LOAD_MORE_INCREMENT = 3;
 
 export const useGetJobs = () => {
   const [jobs, setJobs] = useState<JobSchemaType[]>([]);
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState("");
   const [limit, setLimit] = useState(JOBS_INITIAL_LIMIT);
 
@@ -60,5 +60,20 @@ export const useGetJobs = () => {
     setLimit((prevLimit) => prevLimit + LOAD_MORE_INCREMENT);
   };
 
-  return { jobs: returnedJobs, isLoading, error, isFull, loadMore } as const;
+  const getJob = (id?: string) => {
+    if (!id) return;
+
+    const job = jobs.find((job) => job.id === id);
+
+    return job;
+  };
+
+  return {
+    jobs: returnedJobs,
+    isLoading,
+    error,
+    isFull,
+    loadMore,
+    getJob,
+  } as const;
 };
