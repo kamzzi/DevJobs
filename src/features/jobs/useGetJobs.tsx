@@ -2,10 +2,17 @@ import { useEffect, useState } from "react";
 import { URL } from "./api/api";
 import { JobSchemaType, JobsSchema } from "./Job/JobSchema";
 
+const JOBS_INITIAL_LIMIT = 6;
+const LOAD_MORE_INCREMENT = 3;
+
 export const useGetJobs = () => {
   const [jobs, setJobs] = useState<JobSchemaType[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [limit, setLimit] = useState(JOBS_INITIAL_LIMIT);
+
+  const returnedJobs = jobs.slice(0, limit);
+  const isFull = limit >= jobs.length;
 
   useEffect(() => {
     const controller = new AbortController();
@@ -47,5 +54,11 @@ export const useGetJobs = () => {
     };
   }, []);
 
-  return { jobs, isLoading, error } as const;
+  const loadMore = () => {
+    if (isFull) return;
+
+    setLimit((prevLimit) => prevLimit + LOAD_MORE_INCREMENT);
+  };
+
+  return { jobs: returnedJobs, isLoading, error, isFull, loadMore } as const;
 };

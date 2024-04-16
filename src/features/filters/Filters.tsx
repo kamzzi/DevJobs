@@ -19,8 +19,6 @@ export const Filters = () => {
     query: "(max-width:48rem)",
   });
 
-  console.log(params);
-
   const { register, handleSubmit, watch } = useForm<FiltersSchemaType>({
     defaultValues: {
       ...params,
