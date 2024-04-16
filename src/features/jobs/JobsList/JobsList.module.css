@@ -6,6 +6,11 @@
   row-gap: 3.5rem;
 }
 
+.action {
+  margin: 2rem 0;
+  text-align: center;
+}
+
 @media (max-width: 64rem) {
   .jobs {
     grid-template-columns: repeat(2, 1fr);

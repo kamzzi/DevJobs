@@ -1,10 +1,12 @@
-import { UseFormRegister } from "react-hook-form";
+import { UseFormHandleSubmit, UseFormRegister } from "react-hook-form";
 import { Button } from "../../ui/Button/Button";
 import { Input } from "../../ui/Input/Input";
 import { FiltersCustomCheckbox } from "../FiltersCustomCheckbox/FiltersCustomCheckbox";
 import { FiltersInputContainer } from "../FiltersInputContainer/FiltersInputContainer";
 
 import styled from "./FiltersModal.module.css";
+import { FiltersSchemaType } from "../FiltersSchema";
+import { useModal } from "../../modal/ModalContext/useModal";
 
 type FiltersModalProps = {
   checked: boolean;
@@ -13,11 +15,29 @@ type FiltersModalProps = {
     title: string;
     fullTime: boolean;
   }>;
+  handleSubmit: UseFormHandleSubmit<{
+    title: string;
+    location: string;
+    fullTime: boolean;
+  }>;
+  submitHandler: (data: FiltersSchemaType) => void;
 };
 
-export const FiltersModal = ({ checked, register }: FiltersModalProps) => {
+export const FiltersModal = ({
+  checked,
+  register,
+  handleSubmit,
+  submitHandler,
+}: FiltersModalProps) => {
+  const { close } = useModal();
+
+  const submit = (data: FiltersSchemaType) => {
+    submitHandler(data);
+    close();
+  };
+
   return (
-    <div className={styled.container}>
+    <form className={styled.container} onSubmit={handleSubmit(submit)}>
       <FiltersInputContainer id="location" icon="location" modifier="modal">
         <Input
           id="location"
@@ -29,7 +49,9 @@ export const FiltersModal = ({ checked, register }: FiltersModalProps) => {
       <div className={styled.filters__item}>
         <FiltersCustomCheckbox checked={checked} {...register("fullTime")} />
       </div>
-      <Button modifier="form">Search</Button>
-    </div>
+      <Button modifier="form" type="submit">
+        Search
+      </Button>
+    </form>
   );
 };

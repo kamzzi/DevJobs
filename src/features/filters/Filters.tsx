@@ -19,6 +19,8 @@ export const Filters = () => {
     query: "(max-width:48rem)",
   });
 
+  console.log(params);
+
   const { register, handleSubmit, watch } = useForm<FiltersSchemaType>({
     defaultValues: {
       ...params,
@@ -77,7 +79,12 @@ export const Filters = () => {
       </form>
       {isOpen && (
         <Modal>
-          <FiltersModal checked={isCheckboxChecked} register={register} />
+          <FiltersModal
+            checked={isCheckboxChecked}
+            register={register}
+            handleSubmit={handleSubmit}
+            submitHandler={submitHandler}
+          />
         </Modal>
       )}
     </>
