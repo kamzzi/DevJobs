@@ -3,7 +3,7 @@ import { FiltersSchema, FiltersSchemaType } from "./FiltersSchema";
 
 enum FiltersWorkType {
   FULL = "full",
-  PART = "part",
+  ALL = "all",
 }
 
 export const useFiltersQuery = () => {
@@ -14,14 +14,14 @@ export const useFiltersQuery = () => {
   const params = FiltersSchema.parse({
     title: searchParams.get("title") ?? "",
     location: searchParams.get("location") ?? "",
-    fullTime: time ?? FiltersWorkType.PART,
+    fullTime: time ?? FiltersWorkType.ALL,
   });
 
   const setParams = ({ title, location, fullTime }: FiltersSchemaType) => {
     setSearchParams({
       title,
       location,
-      time: fullTime ? FiltersWorkType.FULL : FiltersWorkType.PART,
+      time: fullTime ? FiltersWorkType.FULL : FiltersWorkType.ALL,
     });
   };
 

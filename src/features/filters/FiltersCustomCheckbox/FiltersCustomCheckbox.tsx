@@ -26,7 +26,7 @@ export const FiltersCustomCheckbox = forwardRef<
             <img src="./assets/desktop/icon-check.svg" alt="" />
           ) : null}
         </span>
-        <span>{checked ? "Full" : "Part"} Time</span>
+        <span>Full Time</span>
       </label>
     </>
   );
