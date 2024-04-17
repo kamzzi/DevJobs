@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import { RoutesPaths } from "../../../../types/shared";
 import { JobInformations } from "./JobInformations/JobInformations";
 import { JobApply } from "./JobApply/JobApply";
+import { Wrapper } from "../../../ui/Wrapper/Wrapper";
 
 export const JobDescription = () => {
   const { isLoading, getJob } = useGetJobs();
@@ -24,8 +25,10 @@ export const JobDescription = () => {
 
   return (
     <>
-      <JobDescriptionHeader job={job} />
-      <JobInformations job={job} />
+      <Wrapper>
+        <JobDescriptionHeader job={job} />
+        <JobInformations job={job} />
+      </Wrapper>
       <JobApply job={job} />
     </>
   );

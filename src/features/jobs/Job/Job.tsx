@@ -1,6 +1,8 @@
 import { JobSchemaType } from "./JobSchema";
 import styled from "./Job.module.css";
-import { Link } from "react-router-dom";
+import { JobLogo } from "./JobLogo/JobLogo";
+import { JobContract } from "./JobContract/JobContract";
+import { CustomLink } from "../../ui/CustomLink/CustomLink";
 
 export const Job = ({
   id,
@@ -13,23 +15,19 @@ export const Job = ({
   location,
 }: JobSchemaType) => {
   return (
-    <Link to={`${id}`} className={styled.job__link}>
+    <CustomLink to={`${id}`}>
       <li className={styled.job}>
-        <div
+        <JobLogo
+          company={company}
+          logo={logo}
+          logoBackground={logoBackground}
           className={styled.job__logo}
-          style={{ backgroundColor: logoBackground }}
-        >
-          <img src={logo} alt={company} />
-        </div>
-        <div className={styled.job__general}>
-          <p>{postedAt}</p>
-          <span className={styled.circle}></span>
-          <p>{contract}</p>
-        </div>
+        />
+        <JobContract contract={contract} postedAt={postedAt} />
         <h2 className={styled.job__title}>{position}</h2>
         <p className={styled.job__company}>{company}</p>
         <p className={styled.job__location}>{location}</p>
       </li>
-    </Link>
+    </CustomLink>
   );
 };

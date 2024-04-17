@@ -1,0 +1,30 @@
+.list {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.list__item {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.list__index {
+  color: var(--color-primary);
+  font-size: 1.4rem;
+}
+
+.list__circle {
+  width: 0.3rem;
+  height: 0.3rem;
+  background-color: var(--color-primary);
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+
+.list__content {
+  color: var(--color-universal);
+  line-height: 1.5;
+}

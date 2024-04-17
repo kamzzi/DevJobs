@@ -1,0 +1,11 @@
+.content {
+  color: var(--color-universal);
+  line-height: 1.5;
+  margin: 1.5rem 0;
+  font-size: 1.2rem;
+}
+
+.subtitle {
+  color: var(--color-input-text);
+  font-size: 1.35rem;
+}

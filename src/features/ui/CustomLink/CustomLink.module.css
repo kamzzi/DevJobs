@@ -1,0 +1,54 @@
+.link:link,
+.link:visited {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.link--company:link,
+.link--company:visited {
+  text-decoration: none;
+  margin-left: auto;
+  padding: 1rem 1.5rem;
+  font-weight: 600;
+  border-radius: 4px;
+  color: var(--color-company);
+  background-color: var(--color-company-bg);
+  transition: 0.3s;
+}
+
+.link--company:hover {
+  background-color: var(--color-company-bg-hover);
+}
+
+.link--apply:link,
+.link--apply:visited {
+  display: inline-block;
+  border-radius: 6px;
+  padding: 1rem 2.5rem;
+  background-color: var(--color-primary);
+  color: var(--color-neutral);
+  font-weight: 500;
+  font-size: 1rem;
+  transition: 0.3s;
+  text-decoration: none;
+}
+
+.link--apply:hover {
+  background-color: var(--color-primary-lighter);
+}
+
+@media (max-width: 64rem) {
+  .link--company:link,
+  .link--company:visited {
+    margin-left: 0;
+    margin-bottom: 3rem;
+  }
+}
+
+@media (max-width: 48rem) {
+  .link--apply:link,
+  .link--apply:visited {
+    width: 100%;
+    text-align: center;
+  }
+}
