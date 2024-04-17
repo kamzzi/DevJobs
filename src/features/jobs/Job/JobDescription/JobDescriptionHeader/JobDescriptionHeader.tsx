@@ -22,7 +22,7 @@ export const JobDescriptionHeader = ({
           <p className={styled.header__company}>{company}</p>
           <p>{website}</p>
         </div>
-        <Link to={website} className={styled.header__link}>
+        <Link to={website} className={styled.header__link} target="_blank">
           Company Site
         </Link>
       </div>

@@ -4,6 +4,8 @@ import { useGetJobs } from "../../useGetJobs";
 import { JobDescriptionHeader } from "./JobDescriptionHeader/JobDescriptionHeader";
 import { useEffect } from "react";
 import { RoutesPaths } from "../../../../types/shared";
+import { JobInformations } from "./JobInformations/JobInformations";
+import { JobApply } from "./JobApply/JobApply";
 
 export const JobDescription = () => {
   const { isLoading, getJob } = useGetJobs();
@@ -21,8 +23,10 @@ export const JobDescription = () => {
   if (!job) return;
 
   return (
-    <div>
+    <>
       <JobDescriptionHeader job={job} />
-    </div>
+      <JobInformations job={job} />
+      <JobApply job={job} />
+    </>
   );
 };
