@@ -67,7 +67,7 @@ export const Filters = () => {
           </div>
         )}
 
-        <Button modifier="form" type="submit">
+        <Button modifier="form" type="submit" aria-label="Search jobs">
           {isMobile ? (
             <img src="./assets/mobile/icon-search.svg" alt="" />
           ) : (
