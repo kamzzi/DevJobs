@@ -39,7 +39,7 @@ export const FiltersModal = ({
       </FiltersInputContainer>
 
       <div className={styled.filters__item}>
-        <FiltersCustomCheckbox checked={checked} {...register("time")} />
+        <FiltersCustomCheckbox checked={checked} {...register("fullTime")} />
       </div>
       <Button modifier="form" type="submit">
         Search
