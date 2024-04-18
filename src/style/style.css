@@ -84,3 +84,9 @@ body {
 body[data-modal="true"] {
   overflow-y: hidden;
 }
+
+@media (max-width: 48rem) {
+  html {
+    font-size: 13px;
+  }
+}

@@ -27,3 +27,9 @@
   color: var(--color-input-text);
   font-size: 2.25rem;
 }
+
+@media (max-width: 48rem) {
+  .footer {
+    padding-right: 1.5rem;
+  }
+}

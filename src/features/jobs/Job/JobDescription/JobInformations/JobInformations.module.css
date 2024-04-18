@@ -42,6 +42,10 @@
 }
 
 @media (max-width: 48rem) {
+  .informations {
+    padding-right: 1.5rem;
+  }
+
   .informations__apply {
     flex-direction: column;
     align-items: flex-start;
