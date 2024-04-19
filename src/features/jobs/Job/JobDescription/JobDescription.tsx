@@ -7,13 +7,14 @@ import { RoutesPaths } from "../../../../types/shared";
 import { JobInformations } from "./JobInformations/JobInformations";
 import { JobApply } from "./JobApply/JobApply";
 import { Wrapper } from "../../../ui/Wrapper/Wrapper";
+import { Spinner } from "../../../ui/Spinner/Spinner";
 
 export const JobDescription = () => {
   const { isLoading, getJob } = useGetJobs();
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const job = getJob(id);
+  const job = getJob(Number(id));
 
   useEffect(() => {
     if (!isLoading && !job) {
@@ -26,6 +27,7 @@ export const JobDescription = () => {
   return (
     <>
       <Wrapper>
+        {isLoading && <Spinner />}
         <JobDescriptionHeader job={job} />
         <JobInformations job={job} />
       </Wrapper>

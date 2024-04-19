@@ -60,7 +60,7 @@ export const useGetJobs = () => {
     setLimit((prevLimit) => prevLimit + LOAD_MORE_INCREMENT);
   };
 
-  const getJob = (id?: string) => {
+  const getJob = (id?: number) => {
     if (!id) return;
 
     const job = jobs.find((job) => job.id === id);
