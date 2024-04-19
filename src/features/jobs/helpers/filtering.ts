@@ -7,8 +7,6 @@ export const filtering = (
 ) => {
   let filteredJobs = jobs;
 
-  console.log(fullTime);
-
   if (title) {
     filteredJobs = filteredJobs.filter(
       (job) =>
