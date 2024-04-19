@@ -4,6 +4,11 @@
   text-decoration: none;
 }
 
+.link--job:link,
+.link--job:visited {
+  padding: 1.5rem;
+}
+
 .link--company:link,
 .link--company:visited {
   text-decoration: none;

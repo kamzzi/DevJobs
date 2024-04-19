@@ -15,8 +15,8 @@ export const Job = ({
   location,
 }: JobSchemaType) => {
   return (
-    <CustomLink to={`${id}`}>
-      <li className={styled.job}>
+    <li className={styled.job}>
+      <CustomLink to={`${id}`} modifier="job">
         <JobLogo
           company={company}
           logo={logo}
@@ -27,7 +27,7 @@ export const Job = ({
         <h2 className={styled.job__title}>{position}</h2>
         <p className={styled.job__company}>{company}</p>
         <p className={styled.job__location}>{location}</p>
-      </li>
-    </CustomLink>
+      </CustomLink>
+    </li>
   );
 };

@@ -8,6 +8,7 @@ import { JobInformations } from "./JobInformations/JobInformations";
 import { JobApply } from "./JobApply/JobApply";
 import { Wrapper } from "../../../ui/Wrapper/Wrapper";
 import { Spinner } from "../../../ui/Spinner/Spinner";
+import { useJobTitle } from "./useJobTitle";
 
 export const JobDescription = () => {
   const { isLoading, getJob } = useGetJobs();
@@ -15,6 +16,7 @@ export const JobDescription = () => {
   const navigate = useNavigate();
 
   const job = getJob(Number(id));
+  useJobTitle(job?.position);
 
   useEffect(() => {
     if (!isLoading && !job) {
