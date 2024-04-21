@@ -16,8 +16,8 @@ export const Modal = ({ children }: ModalProps) => {
 
   return createPortal(
     <FocusTrap>
-      <div className={styled.container}>
-        <div className={styled.overlay} onClick={close} />
+      <div className={styled.container} data-testid="modal">
+        <div className={styled.overlay} onClick={close} data-testid="overlay" />
         <div className={styled.modal}>
           <Wrapper modifier="modal">
             <div className={styled.modal__content}>
@@ -36,6 +36,6 @@ export const Modal = ({ children }: ModalProps) => {
         </div>
       </div>
     </FocusTrap>,
-    document.getElementById("modal")!
+    document.body
   );
 };
