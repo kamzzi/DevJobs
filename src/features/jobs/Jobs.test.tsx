@@ -33,7 +33,7 @@ describe("Jobs testing", () => {
     await waitForElementToBeRemoved(loading).then(async () => {
       const jobs = await screen.findAllByRole("listitem");
 
-      expect(jobs).toHaveLength(3);
+      expect(jobs).toHaveLength(1);
     });
   });
 });

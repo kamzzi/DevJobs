@@ -2,7 +2,7 @@ import { HttpResponse, delay, http } from "msw";
 import { URL } from "../features/jobs/api/api";
 
 export const handlers = [
-  http.get(URL, async () => {
+  http.get(`${URL}/jobs`, async () => {
     await delay(100);
     return HttpResponse.json([
       {
