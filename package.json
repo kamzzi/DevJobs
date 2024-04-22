@@ -8,13 +8,14 @@
     "build": "tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "test": "jest",
+    "test": "vitest",
     "server": "json-server ./src/data/data.json --port 8080 --watch"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-hook-form": "^7.51.3"
+    "react-hook-form": "^7.51.3",
+    "vitest": "^1.5.0"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.24.4",
@@ -39,9 +40,11 @@
     "identity-obj-proxy": "^3.0.0",
     "jest": "^29.7.0",
     "jest-environment-jsdom": "^29.7.0",
+    "jest-fetch-mock": "^3.0.3",
     "jest-transformer-svg": "^2.0.2",
     "json-server": "^1.0.0-alpha.23",
     "msw": "^2.2.14",
+    "node-fetch": "^3.3.2",
     "react-icons": "^5.0.1",
     "react-responsive": "^10.0.0",
     "react-router": "^6.22.3",
@@ -51,6 +54,7 @@
     "ts-node": "^10.9.2",
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
+    "whatwg-fetch": "^3.6.20",
     "zod": "^3.22.4"
   }
 }
