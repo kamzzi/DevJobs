@@ -28,13 +28,13 @@ export const Modal = ({ children }: ModalProps) => {
         if (event.key === "Tab") {
           if (event.shiftKey && document.activeElement === firstElement) {
             event.preventDefault();
-            lastElement.focus();
+            (lastElement as HTMLElement).focus();
           } else if (
             !event.shiftKey &&
             document.activeElement === lastElement
           ) {
             event.preventDefault();
-            firstElement.focus();
+            (firstElement as HTMLElement).focus();
           }
         }
       };
